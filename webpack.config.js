@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         index: [
             'babel-polyfill',
-            './src/js/class.ts'
+            './src/js/index.tsx'
         ]
     },
     output: {
@@ -70,6 +70,6 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: ['.js', '.json', '.ts']
+        extensions: ['.js', '.json', '.ts', '.tsx']
     }
 }
