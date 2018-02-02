@@ -8,7 +8,7 @@ module.exports = {
     entry: {
         index: [
             'babel-polyfill',
-            './index.js'
+            './src/js/greeter.ts'
         ]
     },
     output: {
@@ -19,11 +19,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\js$/,
+                test: /\.js$/,
                 exclude: /(node_modules|browser_components)/,
                 use: [
                     {
                         loader: 'babel-loader'
+                    }
+                ]
+            },
+            {
+                test: /\.tsx?$/,
+                exclude: /(node_modules|browser_components)/,
+                use: [
+                    {
+                        loader: 'ts-loader'
                     }
                 ]
             },
@@ -61,6 +70,6 @@ module.exports = {
         })
     ],
     resolve: {
-        extensions: ['.js', '.json']
+        extensions: ['.js', '.json', '.ts']
     }
 }
